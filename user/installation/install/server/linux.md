@@ -39,16 +39,16 @@ The Go server .deb installer has been tested on Ubuntu. However it should work o
 If you prefer to use the apt repository and install via `apt-get` -
 
 ```bash
-$ echo "deb http://dl.bintray.com/gocd/gocd-deb/ /" > /etc/apt/sources.list.d/gocd.list
+$ echo "deb http://dl.bintray.com/gocd/gocd-deb/ /" | sudo tee -a /etc/apt/sources.list.d/gocd.list
 $ wget --quiet -O - "https://bintray.com/user/downloadSubjectPublicKey?username=gocd" | sudo apt-key add -
-$ apt-get update
-$ apt-get install go-server
+$ sudo apt-get update
+$ sudo apt-get install go-server
 ```
 
 Alternatively, if you have the server DEB downloaded -
 
 ```bash
-$ dpkg -i go-server-${version}.deb
+$ sudo dpkg -i go-server-${version}.deb
 ```
 
 ## Managing the go-server service on linux
